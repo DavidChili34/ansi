@@ -1,0 +1,7 @@
+---
+- name: Setup MySQL Database
+  hosts: mysql_servers
+  become: yes
+  roles:
+    - myansible-role
+

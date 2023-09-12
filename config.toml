@@ -1,0 +1,13 @@
+[sites.testpartner]
+id=11
+server_group="it-project-db"
+server_ip.main="127.0.0.1"
+partner_name="testpartner"
+
+
+  [sites.testpartner.db]
+  host="127.0.0.1" #ip сервера для msql, можно изменить.
+  slaves=["127.0.0.1","127.0.0.1"] # ip для слэйв серверов.
+  base="dev"
+  user="dev"
+  password="testpartner_db"

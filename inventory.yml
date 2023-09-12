@@ -1,0 +1,17 @@
+all:
+  children:
+    mysql_servers:
+      hosts:
+        127.0.0.1:
+          base: dev
+          password: testpartner_db
+          user: dev
+      vars:
+        slaves:
+        - 127.0.0.1
+        - 127.0.0.1
+  hosts:
+    127.0.0.1:
+      id: 11
+      partner_name: testpartner
+      server_group: it-project-db

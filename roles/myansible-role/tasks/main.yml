@@ -1,0 +1,28 @@
+---
+- name: Install MySQL Server
+  apt:
+    name: mysql-server
+    state: present
+
+- name: Start MySQL Service
+  service:
+    name: mysql
+    state: started
+    enabled: yes
+
+- name: Create MySQL Database
+  mysql_db:
+    name: "{{ hostvars[inventory_hostname]['base'] }}"
+    state: present
+  vars:
+    base: "{{ base }}"
+  become_user: root
+
+- name: Ensure MySQL is restarted
+  service:
+    name: mysql
+    state: restarted
+
+
+
+
